@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint && npm run test:coverage",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch --require babel-register",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "npm run test -- --watch",
     "test:coverage": "nyc npm test"
   },
   "nyc": {
@@ -33,19 +33,19 @@
   },
   "homepage": "https://github.com/LeonardoCamargo31/spotify-wrapper#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
     "chai": "^4.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.9",
+    "mocha": "^6.2.2",
     "node-fetch": "^2.6.0",
     "nyc": "^14.1.1",
+    "sinon": "^7.5.0",
     "sinon-chai": "^3.2.0"
-  },
-  "dependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "mocha": "^6.2.2",
-    "sinon": "^7.5.0"
   }
 }
