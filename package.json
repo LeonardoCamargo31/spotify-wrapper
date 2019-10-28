@@ -4,6 +4,11 @@
   "description": "Um wrapper para trabalhar com a Spotify Web API",
   "main": "src/index.js",
   "scripts": {
+    "build": "npm run clear && babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "build:umd":"webpack --output-filename spotify-wrapper.umd.js",
+    "build:all":"npm run build && npm run build:umd",
+    "clear": "rimraf lib",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint && npm run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
@@ -33,10 +38,12 @@
   },
   "homepage": "https://github.com/LeonardoCamargo31/spotify-wrapper#readme",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
     "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -45,7 +52,10 @@
     "mocha": "^6.2.2",
     "node-fetch": "^2.6.0",
     "nyc": "^14.1.1",
+    "rimraf": "^3.0.0",
     "sinon": "^7.5.0",
-    "sinon-chai": "^3.2.0"
+    "sinon-chai": "^3.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   }
 }
