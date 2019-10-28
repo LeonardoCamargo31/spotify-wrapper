@@ -4,14 +4,15 @@ import sinonChai from 'sinon-chai';// fazer a integração do sinon com o chai
 
 import {
   search, searchAlbums, searchArtists, searchTracks, searchPlaylists,
-} from '../src/main';
+} from '../src/search';
 
 // o chai vai usar o sinonChai e toda sua interface
 chai.use(sinonChai);
 // habilite pra nossa interface o global.fetch que é usado no navegador
+// para que o fetch funcione tanto no browser como no node
 global.fetch = require('node-fetch');
 
-describe('spotify wrapper', () => {
+describe('Search', () => {
   let stubedFetch;
   beforeEach(() => {
     // criando o stub
@@ -68,8 +69,10 @@ describe('spotify wrapper', () => {
     });
 
     it('deve retornar um JSON ao resolver a promise', () => {
+      // que vai nos retornar uma promise pendente
       const artists = search('Incubus', 'artist');
-      // .deep.equal deve ser produndamente igual, verificação de todas as propriedades
+      // então usamos o .then como forma de resolver essa Promise
+      // to.deep.equal deve ser produndamente igual, verificação de todas as propriedades
       artists.then((data) => {
         expect(data).to.deep.equal({ artist: 'name' });
       });

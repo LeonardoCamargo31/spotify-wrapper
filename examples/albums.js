@@ -1,4 +1,4 @@
-import { searchAlbums } from '../src/main';
+import { searchAlbums } from '../src/search';
 import { HEADERS } from '../src/config';
 
 global.fetch = require('node-fetch');
