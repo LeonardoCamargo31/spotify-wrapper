@@ -4,6 +4,7 @@ const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    filename: 'spotify-wrapper.umd.js',
     // Universal Module Definition, trabalha com amd, CommonJS e para navegadores com prototypes
     // e guardamos na dist esses arquivos em umd, que podem ser utilizados
     // tanto no node quanto no navegador

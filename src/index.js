@@ -4,8 +4,7 @@ import {
 
 import { getAlbum, getAlbums, getAlbumTracks } from './album';
 
-
-module.exports = {
+export {
   search,
   searchArtists,
   searchAlbums,
