@@ -2,7 +2,7 @@
   "name": "spotify-wrapper",
   "version": "1.0.0",
   "description": "Um wrapper para trabalhar com a Spotify Web API",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "npm run clear && babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
@@ -16,6 +16,10 @@
     "test:coverage": "nyc npm test",
     "coveralls":"npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
   },
+  "files":[
+    "dist",
+    "lib"
+  ],
   "nyc": {
     "reporter": [
       "text",
