@@ -1,5 +1,5 @@
 import { API_URL } from './config';
-import { toJSON } from './utils';
+import toJSON from './utils';
 
 const getAlbum = (id) => fetch(`${API_URL}/albums/${id}`).then(toJSON);
 
