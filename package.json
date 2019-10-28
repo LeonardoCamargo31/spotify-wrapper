@@ -6,14 +6,15 @@
   "scripts": {
     "build": "npm run clear && babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
-    "build:umd":"webpack --output-filename spotify-wrapper.umd.js",
-    "build:all":"npm run build && npm run build:umd",
+    "build:umd": "webpack --output-filename spotify-wrapper.umd.js",
+    "build:all": "npm run build && npm run build:umd",
     "clear": "rimraf lib",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint && npm run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
     "test:tdd": "npm run test -- --watch",
-    "test:coverage": "nyc npm test"
+    "test:coverage": "nyc npm test",
+    "coveralls":"npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "reporter": [
@@ -45,6 +46,7 @@
     "@babel/register": "^7.6.2",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.7",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
