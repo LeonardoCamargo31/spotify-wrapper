@@ -9,7 +9,7 @@
   <script src="../dist/spotify-wrapper.umd.js"></script>
   <script>
     const spotify = new spotifyWrapper({
-      token:'BQBrHceDiaWEDsZlvRhnbdCukT_KI2Ox912f9Ko4mSeKyzdr1Px5edEr_6VA9WhhiNtPFJQOVP_enlExamtMHyP_WQNuLKwlLF4tRScpAj2MTbnoFI5SQd-9jvf7_c3ANBYylTUyx7w32Bctf99vl-_21vvvN6rJSapi'
+      token:'BQDEKkbrj1pib8V2iMFR89IQ6ELCsNyhrRsGJXu8s9_zQrpwJTufzbHAclIXbjaC61QjOi0UX_V4ZpueaFXltCo_GoG2HTtrEq5XUn1pRbbUPVJ-CE7bYEyzaFUeUnYrxex1CFlXnBBP63xhO0Kqm4elpPol_gMDNtR2'
     })
 
     let markup
@@ -19,7 +19,7 @@
       markup = data.albums.items.map(item=>{
         return `<img src='${item.images[0].url}' alt='${item.name}'/>`
       }).join('')
-      console.log(markup)
+
       albumsElement.innerHTML = markup
     })
 

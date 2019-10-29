@@ -1,12 +1,12 @@
-import SpotifyWrapper from '../src/index';
+import SpotifyWrapper from '../index';
 
 global.fetch = require('node-fetch');
 
 const spotify = new SpotifyWrapper({
-  token: 'BQAvnfpiNS3Jw8NA8VT56xtmHmIwyLVd9S1qLu6-zDN-hARckKKcqbsFc8U2BmDM05sjC9uulBKPLNG7mZpnDdtVw4YO13UB6R5TfOEaUbh-NteOruBzJVBRH-whR0aPTTaQvMjsM7AAuqgYRAs',
+  token: 'BQDEKkbrj1pib8V2iMFR89IQ6ELCsNyhrRsGJXu8s9_zQrpwJTufzbHAclIXbjaC61QjOi0UX_V4ZpueaFXltCo_GoG2HTtrEq5XUn1pRbbUPVJ-CE7bYEyzaFUeUnYrxex1CFlXnBBP63xhO0Kqm4elpPol_gMDNtR2',
 });
 
-const albums = spotify.search.albums('Incubus');
+const albums = spotify.search.albums('System of a down');
 
 albums.then((data) => {
   console.log(data);
