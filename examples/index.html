@@ -8,8 +8,12 @@
 <body>
   <script src="../dist/spotify-wrapper.umd.js"></script>
   <script>
+    const spotify = new spotifyWrapper({
+      token:'BQBrHceDiaWEDsZlvRhnbdCukT_KI2Ox912f9Ko4mSeKyzdr1Px5edEr_6VA9WhhiNtPFJQOVP_enlExamtMHyP_WQNuLKwlLF4tRScpAj2MTbnoFI5SQd-9jvf7_c3ANBYylTUyx7w32Bctf99vl-_21vvvN6rJSapi'
+    })
+
     let markup
-    const albums = spotifyWrapper.searchAlbums('Incubus')
+    const albums = spotify.search.albums('System of a down')
     const albumsElement = document.getElementById('albums')
     albums.then(data=>{
       markup = data.albums.items.map(item=>{
