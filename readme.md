@@ -21,7 +21,7 @@ npm install spotify-wrapper-leonardo --save
 
 ```js
 // importar um método específico
-import SpotifyWrapper from 'spotify-wrapper';
+import SpotifyWrapper from 'spotify-wrapper-leonardo';
 
 const spotify = new SpotifyWrapper({
   token: 'SEU_TOKEN_AQUI'
@@ -34,7 +34,7 @@ spotify.search.artists('Incubus');
 ### CommonJS
 
 ```js
-const SpotifyWrapper = require('spotify-wrapper').default;
+const SpotifyWrapper = require('spotify-wrapper-leonardo').default;
 
 const spotify = new SpotifyWrapper({
   token: 'SEU_TOKEN_AQUI'
